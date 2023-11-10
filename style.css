@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Mandali&family=Nunito&family=Roboto:wght@500&display=swap');
+
+body{
+    background-image: url(img/Itachi.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Mandali', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.sections{
+    display: flex;
+}
+
+.content{
+    background-color: rgba(240, 248, 255, 0.22);
+    border-radius: 30px;
+    padding: 22px;
+}
+
+button{
+    font-size: 23px;
+    padding: 10px;
+    width: 50px;
+    text-align: center;
+    height: 50px;
+    /* background-color: aliceblue; */
+    color: white;
+    border-style: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.section-2{
+    color: white;
+    font-size: 20px;
+}
+
+.section-1{
+    color: white;
+    display: flex;
+    margin-right: 40px;
+}
+h1{
+    text-align: center;
+    color: white;
+}
