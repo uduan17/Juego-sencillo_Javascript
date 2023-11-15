@@ -60,6 +60,7 @@ h1{
 @media (max-width: 440px){
     .sections{
         display: grid;
+        flex-direction: column;
         justify-content: center;
     }
     .section-1{
