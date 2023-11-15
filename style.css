@@ -59,9 +59,13 @@ h1{
 
 @media (max-width: 440px){
     .sections{
+        display: grid;
         justify-content: center;
     }
     .section-1{
         margin-right: 0px;
+    }
+    .content{
+        width: 100%;
     }
 }
