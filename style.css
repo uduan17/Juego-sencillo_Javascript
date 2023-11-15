@@ -57,7 +57,7 @@ h1{
     color: white;
 }
 
-@media (max-width: 800px){
+@media (max-width: 440px){
     .sections{
         justify-content: center;
     }
