@@ -7,7 +7,7 @@ let segundoResultado = null;
 let movimientos = 0;
 let aciertos = 0;
 let temporizador = false
-let timer = 60;
+let timer = 90;
 let tiempoRegresivo = null;
 
 // apuntando al document html
@@ -15,18 +15,19 @@ let mostrarMoviminetos = document.getElementById('movimientos');
 let mostrarAciertos = document.getElementById('aciertos');
 let mostrarTiempo = document.getElementById('t_restante')
 
+// funcion para detener el temporizador
+function detenerTemporizador() {
+    clearInterval(tiempoRegresivoId);
+}
+
 // funcion
 function tiempoRestante() {
     tiempoRegresivoId =  setInterval(()=>{
         timer--;
         mostrarTiempo.innerHTML = `Tiempo : ${timer} s`;
         if (timer == 0) {
-            clearInterval(tiempoRegresivoId);
+            detenerTemporizador();
             bloquearTarjetas();
-            Swal.fire({
-                title: "Se acabo el tiempo",
-                icon: "error"
-              });
         }
     },800)
 }
@@ -71,33 +72,21 @@ function destapar(id) {
          tarjeta2.disabled = true;
 
          movimientos++;
-         mostrarMoviminetos.innerHTML = `Movimientos ${movimientos}`;
+         mostrarMoviminetos.innerHTML = `Movimientos: ${movimientos}`;
 
          if (primerResultado == segundoResultado) {
             tarjetasDestapadas = 0;
 
             // aumentar aciertos
             aciertos++;
-            mostrarAciertos.innerHTML = `Aciertos ${aciertos}`;
+            mostrarAciertos.innerHTML = `Aciertos: ${aciertos}`;
 
-            Swal.fire({
-                text: "Muy bien",
-                icon: "success"
-              });
             if (aciertos == 8) {
-            mostrarAciertos.innerHTML = `Aciertos ${aciertos}😱`;
-            mostrarMoviminetos.innerHTML = `Movimientos ${movimientos}😈🏅`;
-                Swal.fire({
-                    title: "Juego terminado",
-                    text: "Muy bien",
-                    icon: "success"
-                  });
-             }
+            mostrarAciertos.innerHTML = `Aciertos: ${aciertos}😱`;
+            mostrarMoviminetos.innerHTML = `Movimientos: ${movimientos}😈🏅`;
+            detenerTemporizador();
+            }
          }else{
-             Swal.fire({
-                text: "Sigue intentando",
-                icon: "error"
-            });
             // volver a tapar valores
             setTimeout(()=>{
                 tarjeta1.innerHTML = '';
@@ -105,7 +94,7 @@ function destapar(id) {
                 tarjeta1.disabled = false;
                 tarjeta2.disabled = false;
                 tarjetasDestapadas = 0;
-            },2000)
+            },800)
          }
 
         

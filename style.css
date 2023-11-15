@@ -14,10 +14,13 @@ body{
 .container{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .sections{
     display: flex;
+    flex-wrap: wrap;
+
 }
 
 .content{
@@ -52,4 +55,13 @@ button{
 h1{
     text-align: center;
     color: white;
+}
+
+@media (max-width: 800px){
+    .sections{
+        justify-content: center;
+    }
+    .section-1{
+        margin-right: 0px;
+    }
 }
